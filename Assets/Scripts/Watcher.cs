@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 using System;
@@ -50,10 +48,6 @@ namespace Assets.Scripts
                 if (!File.Exists(file))
                 {
                     File.Create(file);
-                }
-                else
-                {
-                    //File.WriteAllText(file, String.Empty);
                 }
 
                 using (StreamWriter writer = File.AppendText(file))

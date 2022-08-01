@@ -1,26 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine.EventSystems;
 using UnityEngine;
-using System.IO;
-using System;
 
 namespace Assets.Scripts
 {
     public class GameManager : MonoBehaviour
     {
-        /*private void Start()
+        public bool GameIsLocked()
         {
-            if (FindObjectOfType<Watcher>().IsPlayback)
+            if (GetComponent<Watcher>().IsPlayback)
             {
-                AutoPlay();
+                return true;
             }
+            else
+            {
+                return false;
+            }
+        }
 
-            if (FindObjectOfType<Watcher>().IsWatch)
-            {
-                File.WriteAllText(Environment.CurrentDirectory + "//game.txt", String.Empty);
-            }
-        }*/
         public void Logger(string log)
         {
             GetComponent<Watcher>().WtiteToFile(log);
@@ -31,8 +26,6 @@ namespace Assets.Scripts
             string[] comands = data.Split(' ');
 
             var parent = GameObject.Find(comands[3]);
-
-            Debug.Log("- " + data);
 
             switch (comands[0])
             {
@@ -47,24 +40,5 @@ namespace Assets.Scripts
                     break;
             }
         }
-
-        /*public void WtiteToFile(string data)
-        {
-            var file = Environment.CurrentDirectory + "//game.txt";
-
-            if (!File.Exists(file))
-            {
-                File.Create(file);
-            }
-            else
-            {
-                //File.WriteAllText(file, String.Empty);
-            }
-
-            using (StreamWriter writer = File.AppendText(file))
-            {
-                writer.Write(data + "\n");
-            }
-        }*/
     }
 }

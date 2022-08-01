@@ -79,7 +79,7 @@ namespace Assets.Scripts
         //При нажатии мышкой по объекту, вызывается данный метод
         public void OnPointerClick(PointerEventData eventData)
         {
-            if (!FindObjectOfType<CellsPool>().LockGame)
+            if (!FindObjectOfType<CellsPool>().LockGame && !FindObjectOfType<GameManager>().GameIsLocked())
             {
                 if (!FindObjectOfType<CellsPool>().TheEnd)
                 {

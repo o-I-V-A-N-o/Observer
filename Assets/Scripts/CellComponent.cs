@@ -94,10 +94,6 @@ namespace Assets.Scripts
 
                     transform.parent.gameObject.GetComponent<CellsPool>().SelectedChip = null;
                 }
-                else
-                {
-                    Debug.Log("Nooo");
-                }
             }
         }
 
